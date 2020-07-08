@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 class City {
 	String name;
@@ -96,6 +98,41 @@ public class Exercise4 {
 		// Printing out the total population
 		austrianCities.printTotalNumberOfCitizens();
 		System.out.println();
+
+		// Sorting city list according to name ascending
+		Collections.sort(austrianCities.citiesList, new Comparator<City>() {
+			@Override
+			public int compare(City city, City t1) {
+				return city.name.compareTo(t1.name);
+			}
+		});
+
+		// Displaying the sorted arrlist
+		austrianCities.printAllCityData();
+		System.out.println();
+
+		// Sorting city list according to name descending
+		Collections.reverse(austrianCities.citiesList);
+		austrianCities.printAllCityData();
+		System.out.println();
+
+		// Sorting the city list according to population number - ascending
+		Collections.sort(austrianCities.citiesList, new Comparator<City>() {
+			@Override
+			public int compare(City city, City t1) {
+				return city.citizensNum - t1.citizensNum;
+			}
+		});
+
+		austrianCities.printAllCityData();
+		System.out.println();
+
+		// Sorting the city list according descending population number
+		Collections.reverse(austrianCities.citiesList);
+		austrianCities.printAllCityData();
+		System.out.println();
+
+
 
 
 	}
