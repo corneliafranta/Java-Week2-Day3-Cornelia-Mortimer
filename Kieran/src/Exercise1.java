@@ -1,6 +1,11 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Exercise1 {
+
+	public static void addToListStart(ArrayList<String[]> list, int position, String[] cityTemp)  {
+		list.add(position, cityTemp);
+	}
 
 	public static void main(String[] args) {
 
@@ -62,5 +67,33 @@ public class Exercise1 {
 		for (String[] s : pairedList) {
 			System.out.println(s[0] + " " + s[1] + "°C");
 		}
+
+		System.out.println(" ");
+
+		/*
+		########################################################
+		Exercise 2
+		########################################################
+		*/
+
+		pairedList.sort(Comparator.comparing(strings -> strings[0]));
+
+		for (String[] s : pairedList) {
+			System.out.println(s[0] + " " + s[1] + "°C");
+		}
+
+		System.out.println(" ");
+
+		addToListStart(pairedList, 0, new String[] {"New City", "26"});
+
+		for (String[] s : pairedList) {
+			System.out.println(s[0] + " " + s[1] + "°C");
+		}
+
+		/*
+		########################################################
+		Exercise 3
+		########################################################
+		*/
 	}
 }
